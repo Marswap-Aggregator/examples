@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Marswap Aggregator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #marswap-widget {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }  
+    </style> 
+    </head>
+    <body>
+        <div id="marswap-widget"></div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@marswap-exchange/widget@latest/bundles/marswap-widget.min.js" type="text/javascript"></script>
+        <script>
+            window.onload = () => {InitMarswapWidget({
+                widgetElementId: 'marswap-widget'
+            },
+            {                                
+                apiKey: "4b5f885c-b764-4160-95f4-00ceb5124abb", // Example API Key
+                integration: {
+                    id: 'test-widget',
+                    feeAmount: '0.1', // 0.1%
+                    feeReceiver: 'ENTER YOUR FEE WALLET'
+                },
+                tokenList: [
+                    {
+                        chainId: 109,
+                        address: '0xABbAF2746C46f8F269e0a252285ABE9d8D8CDf63',
+                        symbol: 'MSWAPF',
+                        name: 'MarSwap Farm',
+                        decimals: 18,
+                        buyTokenOrSellTokenHasFees: true,
+                        logoURI: 'https://dex.marswap.exchange/images/tokens/MSWAP.png',
+                    },
+                    {
+                        chainId: 25,
+                        address: '0xaad00d36dbc8343c3505ba51418a43d3622d2964',
+                        symbol: 'CLMRS',
+                        name: 'Crolon Mars',
+                        decimals: 18,
+                        buyTokenOrSellTokenHasFees: true,
+                        logoURI: 'https://assets.coingecko.com/coins/images/26385/standard/resized-image-Promo-removebg-preview.png?1696525462',
+                    },
+                ],
+                useMarswapTokenList: true,
+                defaultTokenIn:{
+                    109:'0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                    25:'0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'
+                },
+                defaultTokenOut:{
+                    109:'0xABbAF2746C46f8F269e0a252285ABE9d8D8CDf63',
+                    25:'0xaad00d36dbc8343c3505ba51418a43d3622d2964'
+                },
+                defaultChainId: 109,
+                defaultSlippage: '5',
+                title: MarswapReact.createElement('div', {
+                    style: { 
+                        display: 'flex',
+                        alignItems: 'center'
+                    }},
+                    MarswapReact.createElement('img', {
+                        src: 'https://agg.marswap.exchange/marswap-logo-modified.png',
+                        style: { width: 32, height: 32, marginRight: 10 },
+                    }),
+                    MarswapReact.createElement('p', { 
+                    style: { 
+                        margin: 0,
+                        fontSize: 24
+                    }},
+                    'Swap Title'),
+                ),
+                theme: {
+                    text: '#FFFFFF',
+                    subText: '#a2a2a2',
+                    buttonText: '#212121',
+                    cardTitle: '#FFFFFF',
+                    fontFamily: 'Roboto',
+                    
+                    primary: '#090909', //Card background
+                    dialog: '#ff890b', //Pop-up card background and main button text
+                    secondary: '#1C1C1C', //Inner boxes
+                    interactive: '#FFFFFF',
+                    stroke: '#505050',
+                    accent: '#ff890b', //Main button and refresh logo
+                    success: '#189470',
+                    warning: '#FF9901',
+                    error: '#F84242',
+
+                    borderRadius: '8px',
+                    buttonRadius: '5px',
+                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.04)',
+                },
+            })}
+        </script>
+    </body>
+</html>
