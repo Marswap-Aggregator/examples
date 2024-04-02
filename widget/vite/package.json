@@ -1,0 +1,27 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "analyze": "source-map-explorer 'dist/assets/*.js' --no-border-checks",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@marswap-exchange/widget": "^1.0.15",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup-plugin-polyfill-node": "^0.13.0"
+  },
+  "devDependencies": {
+    "@types/events": "^3.0.3",
+    "@types/node": "^20.10.4",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8"
+  }
+}
